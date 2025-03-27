@@ -9,13 +9,11 @@ namespace tp26_3
     public class Participante()
     {
         public int NumParti {  get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public string Nombre { get; set; } = null!;
+        public string Apellido { get; set; } = null!;
         public double Tiempo { get; set; }
         public int Altura { get; set; }
         public int Categoria { get; set; }
-        public int Op = 1;
-        public int i = 0;
 
         //public DateOnly FechaNac {  get; set; }
         //public int Edad 
@@ -28,6 +26,7 @@ namespace tp26_3
 
         public void carga(int numParti)
         {
+            NumParti = numParti;
             Console.WriteLine("ingrese el nombre");
             Nombre = Console.ReadLine();
             Console.WriteLine("ingrese el apellido");

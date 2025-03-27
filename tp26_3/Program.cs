@@ -1,6 +1,4 @@
 ﻿using tp26_3;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
 
 int Op = 1;
 List<Participante> Parti = new List<Participante>();
@@ -9,26 +7,27 @@ while (Op != 0)
 {
     Console.WriteLine("ingrese el num. de participante");
     Console.WriteLine("ingrese 0 si quiere salir");
-    int NumParti  = int.Parse(Console.ReadLine());
+    int NumParti = int.Parse(Console.ReadLine());
     if (NumParti != 0)
     {
 
-        Participante participantes = new Participante();
-        participantes.carga(NumParti);
+        Participante participante = new Participante();
+        participante.carga(NumParti);
+
         foreach (int cat in categoria)
         {
-            if (participantes.Categoria != cat)
+            if (participante.Categoria != cat)
             {
-                categoria.Add(participantes.Categoria);
+                categoria.Add(participante.Categoria);
             }
         }
-        Parti.Add(new Participante());
+
+        Parti.Add(participante);
     }
     else
     {
         Op = 0;
     }
-
 }
 
 Participante? participanteMenorTiempo = null;
