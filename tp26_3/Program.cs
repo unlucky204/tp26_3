@@ -30,13 +30,21 @@ while (Op != 0)
     }
 
 }
-Participante? participanteMenorTiempo;
+
+Participante? participanteMenorTiempo = null;
 foreach ( Participante p in Parti)
 {
-    int tiempoAux = int.MaxValue;
+    double tiempoAux = int.MaxValue;
     if (p.Tiempo < tiempoAux)
     {
+        tiempoAux = p.Tiempo;
         participanteMenorTiempo = p;
     }
 }
+Console.WriteLine("el participante con menor tiempo es :");
+Console.WriteLine($"nombre: {participanteMenorTiempo.Tiempo}");
+Console.WriteLine($"nombre: {participanteMenorTiempo.Nombre}");
+Console.WriteLine($"nombre: {participanteMenorTiempo.Apellido}");
+Console.WriteLine($"nombre: {participanteMenorTiempo.NumParti}");
+Console.WriteLine($"nombre: {participanteMenorTiempo.Altura}");
 
